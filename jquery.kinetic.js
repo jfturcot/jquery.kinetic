@@ -1,5 +1,5 @@
 /**
- jQuery.kinetic v2.0.4
+ jQuery.kinetic v2.0.5
  Dave Taylor http://davetayls.me
 
  @license The MIT License (MIT)
@@ -172,7 +172,7 @@
         if (self.mouseDown){
           touch = e.originalEvent.touches[0];
           self._inputmove(touch.clientX, touch.clientY);
-          if (e.preventDefault){
+          if (e.preventDefault && (self.settings.y || Math.abs(self.velocityY) < 5)) {
             e.preventDefault();
           }
         }
